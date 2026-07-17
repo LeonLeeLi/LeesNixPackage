@@ -4,15 +4,20 @@
 , autoPatchelfHook
 , lib
 , makeWrapper
+, dbus
+, cairo
+, gtk3
+, pango
+, xorg.
 }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "zcode";
-  version = "0.1.0";
+  version = "3.3.6";
 
   src = fetchurl {
-    url = "https://example.com/zcode_${finalAttrs.version}_amd64.deb";
-    hash = ""; # replace with actual hash: nix-prefetch-url <url> or use lib.fakeHash first
+    url = "https://cdn-zcode.z.ai/zcode/electron/releases/3.3.6/linux-x64/ZCode-3.3.6-linux-x64.deb";
+    sha256 = "sha256-R93tSPSNxdsuH1pVT+qOW7Hxg/otJjaX4vSDephdlf8="; # replace with actual hash: nix-prefetch-url <url> or use lib.fakeHash first
   };
 
   nativeBuildInputs = [
@@ -20,6 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
     autoPatchelfHook
     makeWrapper
   ];
+  
 
   dontBuild = true;
 
