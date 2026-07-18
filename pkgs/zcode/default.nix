@@ -78,7 +78,7 @@ stdenv.mkDerivation (finalAttrs: {
     mv ZCode $out/opt/
     mv share $out/share
     substituteInPlace $out/share/applications/zcode.desktop \
-      --replace-fail '/opt/ZCode/zcode' "$out/bin/zcode"
+      --replace-fail '/opt/ZCode/zcode' "$out/bin/zcode --force-device-scale-factor=1.0"
     mkdir -p $out/bin
     ln -s $out/opt/ZCode/zcode $out/bin/zcode
     runHook postInstall
