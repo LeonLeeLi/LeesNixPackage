@@ -1,14 +1,30 @@
-{ stdenv
-, fetchurl
-, dpkg
-, autoPatchelfHook
-, lib
-, makeWrapper
-, dbus
-, cairo
-, gtk3
-, pango
-, xorg.
+{
+  stdenv,
+  fetchurl,
+  dpkg,
+  autoPatchelfHook,
+  lib,
+  makeWrapper,
+  dbus,
+  cairo,
+  gtk3,
+  pango,
+  libx11,
+  libxcomposite,
+  libxdamage,
+  libxext,
+  libxfixes,
+  libxrandr,
+  libgbm,
+  expat,
+  libxcb,
+  libxkbcommon,
+  libudev-zero,
+  alsa-lib,
+  at-spi2-atk,
+  libgcc,
+  nspr,
+  nss,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -24,8 +40,27 @@ stdenv.mkDerivation (finalAttrs: {
     dpkg
     autoPatchelfHook
     makeWrapper
+    dbus
+    cairo
+    gtk3
+    pango
+    libx11
+    libxcomposite
+    libxdamage
+    libxext
+    libxfixes
+    libxrandr
+    libgbm
+    expat
+    libxcb
+    libxkbcommon
+    libudev-zero
+    alsa-lib
+    at-spi2-atk
+    libgcc
+    nspr
+    nss
   ];
-  
 
   dontBuild = true;
 
