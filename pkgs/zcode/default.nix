@@ -84,8 +84,9 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  meta = with lib; {
-    description = "Zcode, Simple, Fast, Vibe‑Ready ! z.ai agent client";
+ meta = with lib; {
+   sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+   description = "Zcode, Simple, Fast, Vibe‑Ready ! z.ai agent client";
     homepage = "https://zcode.z.ai";
     license = licenses.unfreeRedistributable;
     platforms = platforms.linux;
