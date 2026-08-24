@@ -28,7 +28,7 @@ stdenv.mkDerivation (finalAttrs: {
   version = "0.9.1";
 
   src = fetchurl {
-    url = "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v${finalAttrs.version}/OpenList-Desktop_${finalAttrs.version}_amd64.deb";
+    url = "https://github.com/OpenListTeam/OpenList-Desktop/releases/download/v0.9.1/OpenList-Desktop_0.9.1_amd64.deb";
     hash = "sha256-2VkbjClwqK1cKuHVCHNUWyYMy6GsR/vFrRly0DgkJTQ=";
   };
 
